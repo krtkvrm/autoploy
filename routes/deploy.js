@@ -65,7 +65,10 @@ route.post('/', (req, res, next) => {
         // Git starts here
         let repo = gitLink.split('/')
         repo = "git@github.com:/"+repo[repo.length-2] + "/" + repo[repo.length-1]
-        if(fs.existsSync(repoPath + "/" + req.body.repository.name)) {
+        if(req.body.repository.name === "autoploy") {
+            shell.exec("git pull")
+        }
+        else if(fs.existsSync(repoPath + "/" + req.body.repository.name)) {
             shell.cd(repoPath + "/" + req.body.repository.name)
             shell.exec("git pull")
             stopRunCmds(repoPath + "/" + req.body.repository.name, req)
