@@ -1,4 +1,4 @@
-[![N|Solid](https://github.com/vkartik97/TestRepoGo/blob/master/Screenshot%20from%202018-03-11%2010-54-16.png?raw=true)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://github.com/vkartik97/autoploy/blob/master/images/logo.png?raw=true)](https://github.com/vkartik97/autoploy)
 
 A Simple Application to Deploy Project from Github directly to Cloud.
 
@@ -10,21 +10,27 @@ A Simple Application to Deploy Project from Github directly to Cloud.
   - Clone autoploy and Change directory to Application<br>
     `$ git clone https://github.com/vkartik97/autoploy.git`
     `$ cd autoploy`
-  - Configure Github Webhooks and Project to work with autoploy<br>
-    - Add Repository details to **autoploy/config/projects.json** in format :<br>
+  - Add Repository details to **autoploy/config/projects.json** in format :<br>
       `{
           "REPOSITORY_NAME/BRANCH_NAME": [GITHUB_LINK, LOCATION_OF_DEPLOYMENT]
         }`
-    - Add deployment details to **autoploy.js** in the **_Root Directory of Project to deploy_** using autoploy :<br>
+  - Add deployment details to **autoploy.js** in the **_Root Directory of Project to deploy_** using autoploy :<br>
       `{
         "run": [
           "BUILD_COMMMAND_1",
           "BUILD_COMMMAND_1"
         ]
        }`
+    
   - Change Directory to autoploy<br>
     `$ cd autoploy`
   - Instal Dependencies<br>
     `$ npm install`
   - Run the Application<br>
     `$ node autoploy_main.js`
+    
+  - Configure Github Webhooks and Project to work with autoploy<br>
+    In Project Settings, add a Webhook pointing to **URL:PORT/deploy** of autoploy running on Cloud, the Content Type should be **application/json** and the Event to triger webhook should be `push` event
+    [![N|Solid](https://github.com/vkartik97/autoploy/blob/master/images/webhooks.png?raw=true)](https://github.com/vkartik97/autoploy)
+
+#### Made during Mumbai Hackathon 2018
