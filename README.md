@@ -1,6 +1,7 @@
 [![N|Solid](https://github.com/vkartik97/autoploy/blob/master/images/logo.png?raw=true)](https://github.com/vkartik97/autoploy)
 
-A Simple Application to Deploy Project from Github directly to Cloud.
+A Simple Application to Deploy Project from Github directly to Cloud.<br>
+[Stable Release - v1.0](https://github.com/vkartik97/autoploy/releases/tag/1.0)
 
 # Installation
 
