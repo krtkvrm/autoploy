@@ -12,6 +12,15 @@ app.use(BodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+    var lines = require('fs').readFileSync("./public/logs.out", 'utf-8').split('\n')
+    var out = ""
+    for(var i = 0 ; i < lines.length ; i++) {
+        out = out + "<br>" + lines[i]
+    }
+    res.send(out)
+})
+
 app.use('/deploy', deploy)
 
 // for Github Test Ping
