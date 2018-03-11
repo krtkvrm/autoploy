@@ -10,6 +10,7 @@ A Simple Application to Deploy Project from Github directly to Cloud.
   - Clone autoploy and Change directory to Application<br>
     `$ git clone https://github.com/vkartik97/autoploy.git`
     `$ cd autoploy`
+    `$ git update-index --assume-unchanged config/projects.json` to avoid conflicts
   - Add Repository details to **autoploy/config/projects.json** in format :<br>
       `{
           "REPOSITORY_NAME/BRANCH_NAME": [GITHUB_LINK, LOCATION_OF_DEPLOYMENT]
