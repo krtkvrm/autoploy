@@ -1,11 +1,7 @@
 const route = require('express').Router()
-
 const shell = require('shelljs')
-
 const projects = require('../config/projects')
-
 const fs = require('fs')
-
 const JSONHelper = require('../JSONHelper')
 
 // To Stop current running project
@@ -17,6 +13,7 @@ var stopRunCmds = (repoPath, req) => {
     }
 }
 
+// To run the project
 var run = (gitLink, repoPath, req, data) => {
     var runCmds = data['run']
     var i = 0
@@ -24,8 +21,6 @@ var run = (gitLink, repoPath, req, data) => {
     let recursion = () => {
         shell.exec(runCmds[i], {silent: false}, (code, stdout, stderr) => {
             if(code !== 0) {
-                console.log(stderr)
-                console.log(stdout)
             }
             else if(i<runCmds.length) {
                 i++

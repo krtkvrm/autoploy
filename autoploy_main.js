@@ -17,4 +17,6 @@ app.post('/', (req, res, next) => {
 
 const HTTPServer = app.listen(8010, (error) => {
     if(error) throw error
+    console.log(`autoploy starting
+    https://github.com/vkartik97/autoploy`)
 })
