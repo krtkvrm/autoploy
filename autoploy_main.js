@@ -4,9 +4,13 @@ const deploy = require('./routes/deploy')
 
 const BodyParser = require('body-parser')
 
+const path = require('path')
+
 const app = express()
 
 app.use(BodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/deploy', deploy)
 
@@ -17,6 +21,5 @@ app.post('/', (req, res, next) => {
 
 const HTTPServer = app.listen(8010, (error) => {
     if(error) throw error
-    console.log(`autoploy starting
-    https://github.com/vkartik97/autoploy`)
+    console.log(`autoploy starting`)
 })
